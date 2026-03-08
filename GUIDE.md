@@ -75,31 +75,37 @@ Delete one to remove it. Use these classes to control sizing:
 
 ---
 
-## 3. Deploying Your Website
+## 3. Hosting & Deployment
 
-### Option A: Netlify (easiest, free)
-1. Go to https://netlify.com and sign up
-2. Drag and drop this entire `Website/` folder onto the Netlify dashboard
-3. Done! You'll get a URL like `your-site.netlify.app`
-4. To use a custom domain, go to Site Settings → Domain management
+This site is hosted on **GitHub Pages** and lives at **ilanberdy.com**.
 
-### Option B: GitHub Pages (free)
-1. Create a GitHub account at https://github.com
-2. Create a new repository (e.g., `photography`)
-3. Upload all files from this folder to the repository
-4. Go to Settings → Pages → set Source to "main" branch
-5. Your site will be live at `https://yourusername.github.io/photography`
+- **Repository**: https://github.com/ilan-berdy/photography-website
+- **Domain**: ilanberdy.com (managed via Cloudflare DNS)
+- **Deploys automatically** when you push to the `main` branch
 
-### Option C: Vercel (free)
-1. Go to https://vercel.com and sign up
-2. Connect your GitHub repo or drag and drop the folder
-3. Instant deployment with a `.vercel.app` URL
+### How to update the site
 
-### Custom domain (optional)
-All three services above support custom domains (e.g., `ilanberdy.com`):
-1. Buy a domain from Namecheap, Google Domains, Cloudflare, etc.
-2. Follow your hosting provider's instructions to connect it
-3. Usually involves adding a CNAME or A record in your domain's DNS settings
+After making any changes (new photos, text edits, etc.):
+```bash
+git add . && git commit -m "Describe what you changed"
+git push
+```
+GitHub Pages will redeploy within about a minute.
+
+### DNS setup (already done, for reference)
+
+Domain is registered on **Cloudflare**. DNS records:
+
+| Type  | Name | Content |
+|-------|------|---------|
+| A     | `@`  | `185.199.108.153` |
+| A     | `@`  | `185.199.109.153` |
+| A     | `@`  | `185.199.110.153` |
+| A     | `@`  | `185.199.111.153` |
+| CNAME | `www` | `ilan-berdy.github.io` |
+| TXT   | `_github-pages-challenge-ilan-berdy` | *(verification code)* |
+
+Proxy status is set to **DNS only** (gray cloud) for all records.
 
 ---
 
@@ -111,6 +117,7 @@ Website/
 ├── styles.css    ← Visual design (colors, layout, animations)
 ├── script.js     ← Interactions (lightbox, scroll effects, menu)
 ├── photos/       ← Put your photos here
+├── CNAME         ← Tells GitHub Pages to use ilanberdy.com
 └── GUIDE.md      ← This file
 ```
 
