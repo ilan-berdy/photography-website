@@ -10,6 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-text">Ilan Berdy</div>
+        <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <a href="#" class="nav-logo">Ilan Berdy</a>
@@ -31,8 +37,12 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Hero -->
+    <!-- Hero with background photo -->
     <header class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80" alt="" class="hero-bg-img" id="heroBgImg">
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">
                 <span class="hero-line">Capturing</span>
@@ -47,15 +57,16 @@
         </div>
     </header>
 
-    <!-- Featured Work -->
+    <!-- Featured Work — Horizontal Scroll -->
     <section class="work" id="work">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
             <span class="section-label">Selected Work</span>
             <h2 class="section-title">Portfolio</h2>
+            <p class="section-hint">Drag or scroll sideways</p>
         </div>
 
-        <div class="gallery">
-            <div class="gallery-item gallery-item--wide" data-reveal>
+        <div class="gallery-track" id="galleryTrack">
+            <div class="gallery-item" data-reveal="left">
                 <div class="gallery-image">
                     <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" alt="Mountain landscape at golden hour" loading="lazy">
                 </div>
@@ -65,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="gallery-item" data-reveal>
+            <div class="gallery-item gallery-item--tall" data-reveal="left">
                 <div class="gallery-image">
                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80" alt="Portrait in natural light" loading="lazy">
                 </div>
@@ -75,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="gallery-item" data-reveal>
+            <div class="gallery-item" data-reveal="left">
                 <div class="gallery-image">
                     <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80" alt="Urban architecture" loading="lazy">
                 </div>
@@ -85,7 +96,7 @@
                 </div>
             </div>
 
-            <div class="gallery-item gallery-item--tall" data-reveal>
+            <div class="gallery-item gallery-item--tall" data-reveal="left">
                 <div class="gallery-image">
                     <img src="https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?w=800&q=80" alt="Abstract nature detail" loading="lazy">
                 </div>
@@ -95,7 +106,7 @@
                 </div>
             </div>
 
-            <div class="gallery-item gallery-item--wide" data-reveal>
+            <div class="gallery-item" data-reveal="left">
                 <div class="gallery-image">
                     <img src="https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=1200&q=80" alt="Ocean waves at sunset" loading="lazy">
                 </div>
@@ -105,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="gallery-item" data-reveal>
+            <div class="gallery-item gallery-item--tall" data-reveal="left">
                 <div class="gallery-image">
                     <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80" alt="Studio portrait" loading="lazy">
                 </div>
@@ -115,7 +126,7 @@
                 </div>
             </div>
 
-            <div class="gallery-item" data-reveal>
+            <div class="gallery-item" data-reveal="left">
                 <div class="gallery-image">
                     <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80" alt="Misty forest" loading="lazy">
                 </div>
@@ -127,28 +138,33 @@
         </div>
     </section>
 
+    <!-- Full-bleed image divider -->
+    <div class="divider-image" data-parallax>
+        <img src="https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=1920&q=80" alt="" loading="lazy">
+    </div>
+
     <!-- About -->
     <section class="about" id="about">
         <div class="about-grid">
-            <div class="about-image" data-reveal>
+            <div class="about-image" data-reveal="scale">
                 <img src="photos/IMG_1963.jpeg" alt="Photographer at work">
             </div>
-            <div class="about-content" data-reveal>
+            <div class="about-content" data-reveal="right">
                 <span class="section-label">About</span>
                 <h2 class="about-title">Every frame<br><em>tells a story</em></h2>
                 <p>I'm a photographer driven by the interplay of light, shadow, and emotion. My work spans landscapes, portraits, and the quiet beauty found in everyday moments.</p>
                 <p>With each photograph, I seek to capture not just what I see — but what I feel. The goal is always the same: to create images that resonate, that linger, that move.</p>
                 <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">8+</span>
+                    <div class="stat" data-reveal>
+                        <span class="stat-number" data-count="8">0</span><span class="stat-plus">+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">200+</span>
+                    <div class="stat" data-reveal>
+                        <span class="stat-number" data-count="200">0</span><span class="stat-plus">+</span>
                         <span class="stat-label">Projects</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">15</span>
+                    <div class="stat" data-reveal>
+                        <span class="stat-number" data-count="15">0</span>
                         <span class="stat-label">Countries</span>
                     </div>
                 </div>
@@ -158,15 +174,18 @@
 
     <!-- Contact -->
     <section class="contact" id="contact">
-        <div class="contact-content" data-reveal>
+        <div class="contact-content" data-reveal="scale">
             <span class="section-label">Get in Touch</span>
             <h2 class="contact-title">Let's create<br><em>something beautiful</em></h2>
             <p>Available for commissions, collaborations, and creative projects worldwide.</p>
-            <a href="mailto:hello@ilanberdy.com" class="contact-email">hello@ilanberdy.com</a>
+            <a href="mailto:ilan.berdy@gmail.com" class="contact-email">
+                <span class="contact-email-text">ilan.berdy@gmail.com</span>
+                <span class="contact-email-line"></span>
+            </a>
             <div class="contact-socials">
                 <a href="#" aria-label="Instagram">Instagram</a>
                 <a href="#" aria-label="Behance">Behance</a>
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/ilan-berdy/" aria-label="LinkedIn">LinkedIn</a>
             </div>
         </div>
     </section>
@@ -179,7 +198,15 @@
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" aria-label="Close">&times;</button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+        <button class="lightbox-prev" aria-label="Previous">&lsaquo;</button>
+        <button class="lightbox-next" aria-label="Next">&rsaquo;</button>
         <img src="" alt="" class="lightbox-img" id="lightboxImg">
+    </div>
+
+    <!-- Custom cursor (desktop) -->
+    <div class="cursor" id="cursor">
+        <span class="cursor-text">View</span>
     </div>
 
     <script src="script.js"></script>
